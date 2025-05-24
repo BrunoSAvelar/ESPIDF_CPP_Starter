@@ -1,0 +1,101 @@
+dependencies:
+  espressif/mdns:
+    component_hash: 7fd79958fd0b9a4917ee4f50141fe29c902c02d1a1feb1d6751276049b186d6b
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.8.0
+  idf:
+    source:
+      type: idf
+    version: 5.4.0
+  locker/hardware_info:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\hardware_profile\hardware_info
+      type: local
+    version: 1.0.0
+  locker/hardware_pins:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\hardware_profile\hardware_pins
+      type: local
+    version: 1.0.0
+  locker/http_server:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\network\http_server
+      type: local
+    version: 1.0.0
+  locker/network_manager:
+    dependencies:
+    - name: locker/nvs_manager
+      version: '*'
+    - name: locker/http_server
+      version: '*'
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\network\network_manager
+      type: local
+    version: 1.0.0
+  locker/nvs_manager:
+    dependencies:
+    - name: monitory/hardware_info
+      override_path: ../../hardware_profile/hardware_info/
+      version: '*'
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\nvs\nvs_manager
+      type: local
+    version: 1.0.0
+  locker/password_manager:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\password_manager
+      type: local
+    version: 1.0.0
+  locker/relay_driver:
+    dependencies:
+    - name: monitory/hardware_pins
+      override_path: ../../hardware_profile/hardware_pins/
+      version: '*'
+    - name: monitory/hardware_info
+      override_path: ../../hardware_profile/hardware_info/
+      version: '*'
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\relay\relay_driver
+      type: local
+    version: 1.0.0
+  locker/wifi_manager:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\network\wifi_manager
+      type: local
+    version: 1.0.0
+  monitory/hardware_info:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\hardware_profile\hardware_info
+      type: local
+    version: 1.0.0
+  monitory/hardware_pins:
+    dependencies: []
+    source:
+      path: C:\dev\proj\esp-interface\firmware\components\hardware_profile\hardware_pins
+      type: local
+    version: 1.0.0
+direct_dependencies:
+- espressif/mdns
+- locker/hardware_info
+- locker/hardware_pins
+- locker/http_server
+- locker/network_manager
+- locker/nvs_manager
+- locker/password_manager
+- locker/relay_driver
+- locker/wifi_manager
+manifest_hash: 9963f33ed80cc3923275268b43574bdebb5db6d2ed12ac343f0e726671828803
+target: esp32
+version: 2.0.0
