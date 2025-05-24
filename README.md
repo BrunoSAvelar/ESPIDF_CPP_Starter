@@ -46,7 +46,7 @@ Siga os passos abaixo para configurar e executar o projeto:
 
 2. **Clonar este repositório**
    ```bash
-   git clone https://github.com/seu-usuario/ESPIDF_CPP_Starter.git
+   git clone https://github.com/BrunoSAvelar/ESPIDF_CPP_Starter.git
    cd ESPIDF_CPP_Starter
 
 3. **Abra o código clonado no Visual Code**
