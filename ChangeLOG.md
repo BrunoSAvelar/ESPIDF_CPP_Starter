@@ -4,9 +4,7 @@
  - Projeto inicial criado com 1 classe (AppManager) e 1 task. 
 
 ### Bug Fixes
-
 -
 
 ### Updated
-
 -

@@ -1,103 +1,123 @@
 # ESPIDF_CPP_Starter
-Este é um projeto de exemplo para demonstrar como utilizar **ESP-IDF** com **C++** em sistemas embarcados, especialmente em dispositivos ESP32. O objetivo é fornecer uma base clara e funcional para projetos que desejam tirar proveito dos recursos da linguagem C++ no desenvolvimento embarcado.
+This is an example project demonstrating how to use **ESP-IDF** with **C++** in embedded systems, especially on ESP32 devices. The goal is to provide a clear and functional foundation for projects that want to leverage the features of the C++ language in embedded development.
 
-## 🧭 Justificativa
+## 👤 Autor
+This project was made by Bruno Silveira Avelar
 
-Hoje existe pouco material disponível na internet que mostre como trabalhar com sistemas embarcados utilizando C++. A maior parte dos profissionais que atuam nessa área tendem a utilizar **linguagem C pura**, por ser tradicionalmente associada ao desenvolvimento de firmware. No entanto, essa escolha muitas vezes ignora os **benefícios da orientação a objetos**, como encapsulamento, reutilização de código e maior modularidade, que podem tornar o desenvolvimento mais limpo, escalável e seguro.
+Contact: b.silveira.avelar@gmail.com
+Linkedin: www.linkedin.com/in/bruno-avelar
 
-Além disso, cada vez mais são lançados microcontroladores com maior capacidade de processamento e memória, o que abre espaço para a utilização de linguagens e paradigmas de programação mais sofisticados. Esses novos dispositivos, como os baseados em ARM Cortex-M, ESP32-S3 e variantes mais recentes da linha STM32, permitem o uso eficiente de recursos como alocação dinâmica de memória, herança, polimorfismo e templates, características centrais da programação orientada a objetos em C++.
+## 🧩Dependências:
 
-Paralelamente, os projetos de sistemas embarcados estão se tornando mais complexos e exigem funcionalidades mais robustas — integração com redes Wi-Fi ou Bluetooth, protocolos criptografados, interfaces gráficas, sensores diversos e conectividade com serviços em nuvem. Esse aumento de complexidade torna inviável a manutenção de grandes bases de código escritas em C estruturado, sem ferramentas adequadas de abstração e organização.
+This project runs with ESP-IDF V5.3.1 and has been tested on an ESP32.
 
-Nesse contexto, o uso de C++ permite criar arquiteturas de software mais estruturadas, com separação clara de responsabilidades, testes mais acessíveis e maior facilidade de manutenção e evolução do código. Frameworks modernos para sistemas embarcados, como mbed OS ou mesmo bibliotecas escritas com C++ moderno para FreeRTOS, evidenciam uma tendência crescente do setor em adotar práticas mais maduras de engenharia de software.
+## 🧭 Justification
 
-Portanto, disseminar conhecimento sobre o uso de C++ em sistemas embarcados é essencial para que profissionais da área acompanhem essa evolução tecnológica e possam desenvolver soluções mais modernas, confiáveis e sustentáveis a longo prazo.
+Currently, there is limited material available online that shows how to work with embedded systems using C++. Most professionals in this area tend to use **pure C language**, as it is traditionally associated with firmware development. However, this choice often overlooks the **benefits of object-orientation**, such as encapsulation, code reuse, and greater modularity, which can make development cleaner, more scalable, and more secure.
 
+Furthermore, microcontrollers with increased processing power and memory are increasingly being released, opening up possibilities for more sophisticated languages and programming paradigms. These new devices, such as those based on ARM Cortex-M, ESP32-S3, and more recent variants of the STM32 line, allow for the efficient use of features like dynamic memory allocation, inheritance, polymorphism, and templates, which are central to object-oriented programming in C++.
 
-## 🚀 Vantagens de usar C++ com ESP-IDF
+In parallel, embedded system projects are becoming more complex and require more robust functionalities—integration with Wi-Fi or Bluetooth networks, encrypted protocols, graphical interfaces, various sensors, and connectivity with cloud services. This increase in complexity makes it unfeasible to maintain large codebases written in structured C without adequate abstraction and organization tools.
 
-O ESP-IDF suporta diversos recursos modernos do C++, o que permite um desenvolvimento mais robusto e organizado. Abaixo, listamos alguns dos principais recursos disponíveis:
+In this context, using C++ allows for the creation of more structured software architectures, with clear separation of responsibilities, more accessible testing, and greater ease of code maintenance and evolution. Modern frameworks for embedded systems, such as mbed OS or even libraries written with modern C++ for FreeRTOS, demonstrate a growing industry trend to adopt more mature software engineering practices.
 
-- **Exception Handling** — Manipulação de exceções para melhor tratamento de erros.
-- **Multithreading** — Programação concorrente com suporte às bibliotecas C++ padrão.
-- **RTTI (Runtime Type Information)** — Identificação de tipos em tempo de execução.
-- **Thread Local Storage** — Suporte à palavra-chave `thread_local`.
-- **Filesystem Library** — Manipulação de arquivos com a biblioteca padrão do C++.
-- **Todos os recursos do C++ suportados pelo GCC**, com algumas limitações (consulte a [documentação do GCC](https://gcc.gnu.org/) para detalhes).
+Therefore, disseminating knowledge about the use of C++ in embedded systems is essential for professionals in the field to keep up with this technological evolution and develop more modern, reliable, and sustainable long-term solutions.
 
-Esses recursos permitem que desenvolvedores aproveitem a linguagem de forma moderna, mesmo em ambientes embarcados.
+---
 
-## ✅ Objetivo deste projeto
-Servir como ponto de partida para desenvolvedores que desejam criar aplicações embarcadas modernas e organizadas, utilizando o melhor do C++ com a robustez do framework ESP-IDF.
+## 🚀 Advantages of using C++ with ESP-IDF
 
-## 💡Explicação do projeto:
-### Estrutura do Projeto
-O projeto está organizado da seguinte forma:
+ESP-IDF supports several modern C++ features, allowing for more robust and organized development. Below, we list some of the main available features:
 
-  main.cpp: É o ponto de entrada da aplicação. Aqui existe a função app_main() que é a primeira a ser executada quando o dispositivo é ligado. Esta função é declarada com extern "C" para garantir que o inicializador do ESP32 possa chamá-la corretamente, já que o código está em C++.
+- **Exception Handling** — Exception handling for better error management.
+- **Multithreading** — Concurrent programming with support for standard C++ libraries.
+- **RTTI (Runtime Type Information)** — Runtime type identification.
+- **Thread Local Storage** — Support for the `thread_local` keyword.
+- **Filesystem Library** — File manipulation with the standard C++ library.
+- **All C++ features supported by GCC**, with some limitations (consult the [GCC documentation](https://gcc.gnu.org/) for details).
 
-  AppManager.cpp: Implementa uma classe de exemplo chamada AppManager que demonstra como criar e utilizar classes C++ em um ambiente ESP-IDF. A classe cria uma tarefa FreeRTOS (AppManagerTask) que é executada em paralelo com o loop principal.
+These features allow developers to leverage the language in a modern way, even in embedded environments.
 
-### Funcionalidades Implementadas
-- Gerenciamento de Tarefas FreeRTOS: O projeto demonstra como criar tarefas usando o FreeRTOS dentro de classes C++.
+---
 
-- Configuração de Logs: Existe uma função LogConfig() que configura diferentes níveis de log para diferentes módulos do aplicativo.
+## ✅ Objective of this project
+To serve as a starting point for developers who want to create modern and organized embedded applications, using the best of C++ with the robustness of the ESP-IDF framework.
 
-- Demonstração de POO: O projeto ilustra conceitos básicos de Programação Orientada a Objetos em um ambiente embarcado.
+---
 
-### Fluxo de Execução
-- A aplicação começa na função app_main().
-- A configuração de logs é inicializada.
-- Uma instância de AppManager é criada.
-- O construtor de AppManager cria uma tarefa FreeRTOS (AppManagerTask).
-- A tarefa AppManagerTask executa em paralelo, exibindo logs a cada segundo.
-- O loop principal em app_main() continua rodando, com um atraso de 1 segundo entre iterações.
+## 💡 Project Explanation:
+### Project Structure
+The project is organized as follows:
 
+`main.cpp`: This is the application's entry point. It contains the `app_main()` function, which is the first to be executed when the device powers on. This function is declared with `extern "C"` to ensure that the ESP32 initializer can call it correctly, as the code is in C++.
 
-## 📚 Referência oficial
-Para mais informações sobre o suporte a C++ no ESP-IDF, consulte a documentação oficial da Espressif:
+`AppManager.cpp`: Implements an example class called `AppManager` that demonstrates how to create and use C++ classes in an ESP-IDF environment. The class creates a FreeRTOS task (`AppManagerTask`) that runs in parallel with the main loop.
+
+### Implemented Functionalities
+- **FreeRTOS Task Management**: The project demonstrates how to create tasks using FreeRTOS within C++ classes.
+- **Log Configuration**: There is a `LogConfig()` function that configures different log levels for various application modules.
+- **OOP Demonstration**: The project illustrates basic Object-Oriented Programming concepts in an embedded environment.
+
+### Execution Flow
+- The application starts in the `app_main()` function.
+- Log configuration is initialized.
+- An instance of `AppManager` is created.
+- The `AppManager` constructor creates a FreeRTOS task (`AppManagerTask`).
+- The `AppManagerTask` runs in parallel, displaying logs every second.
+- The main loop in `app_main()` continues to run, with a 1-second delay between iterations.
+
+---
+
+## 📚 Official Reference
+For more information on C++ support in ESP-IDF, refer to the official Espressif documentation:
 🔗 https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/cplusplus.html
 
-## ⚙️ Como utilizar o projeto
+---
 
-Siga os passos abaixo para configurar e executar o projeto:
+## ⚙️ How to use the project
 
-1. **Instale os softwares abaixo:**
+Follow the steps below to set up and run the project:
 
-   - Visual Studio Code (https://code.visualstudio.com/)
-   - ESP-IDF Extension for VS Code (https://github.com/espressif/vscode-esp-idf-extension/blob/master/README.md)
+1. **Install the following software:**
 
+    - Visual Studio Code (https://code.visualstudio.com/)
+    - ESP-IDF Extension for VS Code (https://github.com/espressif/vscode-esp-idf-extension/blob/master/README.md)
 
-2. **Clonar este repositório**
-   ```bash
-   git clone https://github.com/BrunoSAvelar/ESPIDF_CPP_Starter.git
-   cd ESPIDF_CPP_Starter
+2. **Clone this repository**
+    ```bash
+    git clone [https://github.com/BrunoSAvelar/ESPIDF_CPP_Starter.git](https://github.com/BrunoSAvelar/ESPIDF_CPP_Starter.git)
+    cd ESPIDF_CPP_Starter
+    ```
 
-3. **Abra o código clonado no Visual Code**
+3. **Open the cloned code in Visual Studio Code**
 
-4. **Compile o projeto**
+4. **Compile the project**
 
-## 🤝 Como contribuir
+---
 
-Contribuições são muito bem-vindas! Se você deseja ajudar a melhorar este projeto, siga os passos abaixo:
+## 🤝 How to contribute
 
-1. **Fork** este repositório.
-2. Crie uma **branch** com sua feature ou correção:  
-   ```bash
-    git checkout -b minha-contribuicao
-   
-3. Faça suas alterações e commit:
-   ```bash
-    git commit -m 'Adiciona nova funcionalidade'
+Contributions are very welcome! If you want to help improve this project, follow the steps below:
 
-4. Envie para o seu repositório remoto:
-   ```bash
-    git push origin minha-contribuicao
+1. **Fork** this repository.
+2. Create a **branch** with your feature or fix:
+    ```bash
+    git checkout -b my-contribution
+    ```
+3. Make your changes and commit:
+    ```bash
+    git commit -m 'Adds new functionality'
+    ```
+4. Push to your remote repository:
+    ```bash
+    git push origin my-contribution
+    ```
+5. Open a Pull Request explaining your changes.
 
-5. Abra um Pull Request explicando suas mudanças.
+Feel free to suggest improvements, fix bugs, write documentation, or create new examples!
 
-Sinta-se à vontade para sugerir melhorias, corrigir bugs, escrever documentação ou criar novos exemplos!
+---
 
-## 📄 Licença
-Este projeto está licenciado sob os termos da Licença MIT.
-Consulte o arquivo LICENSE para mais detalhes.
+## 📄 License
+This project is licensed under the MIT License.
+See the LICENSE file for more details.
