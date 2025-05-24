@@ -30,6 +30,30 @@ Esses recursos permitem que desenvolvedores aproveitem a linguagem de forma mode
 ## ✅ Objetivo deste projeto
 Servir como ponto de partida para desenvolvedores que desejam criar aplicações embarcadas modernas e organizadas, utilizando o melhor do C++ com a robustez do framework ESP-IDF.
 
+## 💡Explicação do projeto:
+### Estrutura do Projeto
+O projeto está organizado da seguinte forma:
+
+  main.cpp: É o ponto de entrada da aplicação. Aqui existe a função app_main() que é a primeira a ser executada quando o dispositivo é ligado. Esta função é declarada com extern "C" para garantir que o inicializador do ESP32 possa chamá-la corretamente, já que o código está em C++.
+
+  AppManager.cpp: Implementa uma classe de exemplo chamada AppManager que demonstra como criar e utilizar classes C++ em um ambiente ESP-IDF. A classe cria uma tarefa FreeRTOS (AppManagerTask) que é executada em paralelo com o loop principal.
+
+### Funcionalidades Implementadas
+- Gerenciamento de Tarefas FreeRTOS: O projeto demonstra como criar tarefas usando o FreeRTOS dentro de classes C++.
+
+- Configuração de Logs: Existe uma função LogConfig() que configura diferentes níveis de log para diferentes módulos do aplicativo.
+
+- Demonstração de POO: O projeto ilustra conceitos básicos de Programação Orientada a Objetos em um ambiente embarcado.
+
+### Fluxo de Execução
+- A aplicação começa na função app_main().
+- A configuração de logs é inicializada.
+- Uma instância de AppManager é criada.
+- O construtor de AppManager cria uma tarefa FreeRTOS (AppManagerTask).
+- A tarefa AppManagerTask executa em paralelo, exibindo logs a cada segundo.
+- O loop principal em app_main() continua rodando, com um atraso de 1 segundo entre iterações.
+
+
 ## 📚 Referência oficial
 Para mais informações sobre o suporte a C++ no ESP-IDF, consulte a documentação oficial da Espressif:
 🔗 https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/cplusplus.html
